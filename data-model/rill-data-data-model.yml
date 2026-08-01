@@ -1,0 +1,89 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/rill-data-admin-openapi.yaml
+notes: >-
+  Entity-relationship graph derived from the Rill admin OpenAPI component
+  schemas and their id-reference fields (orgId, projectId, ownerUserId, etc).
+  Rill Cloud's core hierarchy is Organization -> Project -> Deployment, with
+  Users/Usergroups granted roles, ServiceTokens for automation, and billing
+  entities on the organization.
+entities:
+  - name: Organization
+    schema: v1Organization
+    key_fields: [id, name, displayName, billingPlanName, billingCustomerId]
+  - name: Project
+    schema: v1Project
+    key_fields: [id, name, orgId, orgName, createdByUserId, gitRemote, prodDeploymentId]
+  - name: Deployment
+    schema: v1Deployment
+    key_fields: [id, projectId, ownerUserId, branch, environment, status, runtimeHost, runtimeInstanceId]
+  - name: User
+    schema: v1User
+    key_fields: [id, email, displayName]
+  - name: Usergroup
+    schema: v1Usergroup
+    key_fields: [groupId, groupName, orgId]
+  - name: ServiceToken
+    schema: v1ServiceToken
+    key_fields: [id, orgId]
+  - name: MagicAuthToken
+    schema: v1MagicAuthToken
+    key_fields: [id, projectId]
+  - name: Bookmark
+    schema: v1Bookmark
+    key_fields: [id, projectId]
+  - name: Subscription
+    schema: v1Subscription
+    key_fields: [id, orgId, planName]
+  - name: BillingIssue
+    schema: v1BillingIssue
+    key_fields: [organization, type]
+relationships:
+  - from: Project
+    to: Organization
+    type: belongs_to
+    via: orgId
+  - from: Organization
+    to: Project
+    type: has_many
+    via: orgId
+  - from: Deployment
+    to: Project
+    type: belongs_to
+    via: projectId
+  - from: Project
+    to: Deployment
+    type: has_many
+    via: projectId
+  - from: Deployment
+    to: User
+    type: belongs_to
+    via: ownerUserId
+  - from: Project
+    to: User
+    type: belongs_to
+    via: createdByUserId
+  - from: Usergroup
+    to: Organization
+    type: belongs_to
+    via: orgId
+  - from: ServiceToken
+    to: Organization
+    type: belongs_to
+    via: orgId
+  - from: Subscription
+    to: Organization
+    type: belongs_to
+    via: orgId
+  - from: BillingIssue
+    to: Organization
+    type: belongs_to
+    via: organization
+  - from: MagicAuthToken
+    to: Project
+    type: belongs_to
+    via: projectId
+  - from: Bookmark
+    to: Project
+    type: belongs_to
+    via: projectId

@@ -1,0 +1,288 @@
+# Rill
+
+## Documentation
+
+- [Contact us](https://docs.rilldata.com/contact/contact): 
+- [Data Sources](https://docs.rilldata.com/developers/build/connectors/data-source/data-source): 
+- [Delta Lake](https://docs.rilldata.com/developers/build/connectors/data-source/delta): Read Delta Lake tables from object storage
+- [External DuckDB](https://docs.rilldata.com/developers/build/connectors/data-source/duckdb): Connect to external DuckDB databases and ingest data into Rill
+- [Google Sheets](https://docs.rilldata.com/developers/build/connectors/data-source/googlesheets): Connect to data in Google Sheets
+- [Apache Iceberg](https://docs.rilldata.com/developers/build/connectors/data-source/iceberg): Read Iceberg tables from object storage
+- [Kafka](https://docs.rilldata.com/developers/build/connectors/data-source/kafka): Connect Kafka to OLAP Engines
+- [Local File](https://docs.rilldata.com/developers/build/connectors/data-source/local-file): Connect to your local data files
+- [Salesforce](https://docs.rilldata.com/developers/build/connectors/data-source/salesforce): Connect to data in a Salesforce org using the Bulk API
+- [SQLite](https://docs.rilldata.com/developers/build/connectors/data-source/sqlite): Connect to data in SQLite
+- [Google BigQuery](https://docs.rilldata.com/developers/build/connectors/olap/bigquery): Power Rill dashboards using BigQuery
+- [ClickHouse](https://docs.rilldata.com/developers/build/connectors/olap/clickhouse): Power Rill dashboards using ClickHouse
+- [Databricks](https://docs.rilldata.com/developers/build/connectors/olap/databricks): Power Rill dashboards using Databricks
+- [Druid](https://docs.rilldata.com/developers/build/connectors/olap/druid): Power Rill dashboards using Druid
+- [DuckDB](https://docs.rilldata.com/developers/build/connectors/olap/duckdb): Power Rill dashboards using DuckDB (default)
+- [DuckLake](https://docs.rilldata.com/developers/build/connectors/olap/ducklake): Power Rill dashboards using DuckLake
+- [MotherDuck](https://docs.rilldata.com/developers/build/connectors/olap/motherduck): Power Rill dashboards using MotherDuck
+- [Using Multiple OLAP Engines](https://docs.rilldata.com/developers/build/connectors/olap/multiple-olap): Using multiple OLAP Engines to power dashboards in the same project
+- ["Bring Your Own OLAP Engine (Live Connector)"](https://docs.rilldata.com/developers/build/connectors/olap/olap): Configure the OLAP engine used by Rill
+- [Pinot](https://docs.rilldata.com/developers/build/connectors/olap/pinot): Power Rill dashboards using Pinot
+- [Snowflake](https://docs.rilldata.com/developers/build/connectors/olap/snowflake): Power Rill dashboards using Snowflake
+- [StarRocks](https://docs.rilldata.com/developers/build/connectors/olap/starrocks): Power Rill dashboards using StarRocks
+- [Claude](https://docs.rilldata.com/developers/build/connectors/services/claude): Use Claude for AI features with your own API key
+- [Gemini](https://docs.rilldata.com/developers/build/connectors/services/gemini): Use Gemini for AI features with your own API key
+- ["Service Integrations"](https://docs.rilldata.com/developers/build/connectors/services/index): Connect Rill to external services like OpenAI and Slack
+- [OpenAI](https://docs.rilldata.com/developers/build/connectors/services/openai): Connect to OpenAI services for AI-powered features
+- [Slack Integration](https://docs.rilldata.com/developers/build/connectors/services/slack): Connect to Slack for data extraction and analytics
+- ["Connect to your Data"](https://docs.rilldata.com/developers/build/connectors/connectors): Import local files or remote data sources
+- [Configure Local Credentials](https://docs.rilldata.com/developers/build/connectors/credentials): 
+- [Development/Production Connector Environments](https://docs.rilldata.com/developers/build/connectors/templating): Development and Production Setup
+- [Calling Custom APIs](https://docs.rilldata.com/developers/build/custom-apis/calling): How to call and consume your custom APIs from external applications
+- [Custom APIs](https://docs.rilldata.com/developers/build/custom-apis/index): Expose your Rill data as HTTP API endpoints
+- [Metrics SQL APIs](https://docs.rilldata.com/developers/build/custom-apis/metrics-sql): Create custom APIs that query metrics views using dimension and measure names
+- [OpenAPI Documentation](https://docs.rilldata.com/developers/build/custom-apis/openapi): Add OpenAPI specs to your custom APIs for documentation and client generation
+- [Security & Access Control](https://docs.rilldata.com/developers/build/custom-apis/security): Control who can access your APIs and what data they see using security rules and custom attributes
+- [SQL APIs](https://docs.rilldata.com/developers/build/custom-apis/sql): Create custom APIs with SQL queries against models, tables, and external databases
+- [Dynamic Queries with Templating](https://docs.rilldata.com/developers/build/custom-apis/templating): Use templating to make your custom APIs dynamic with arguments, user attributes, and conditional logic
+- [All Canvas Widgets](https://docs.rilldata.com/developers/build/dashboards/canvas-widgets/canvas-widgets): Complete guide to all available widgets in Rill Canvas Dashboards
+- ["Chart Widgets"](https://docs.rilldata.com/developers/build/dashboards/canvas-widgets/chart): 
+- ["Data Widgets"](https://docs.rilldata.com/developers/build/dashboards/canvas-widgets/data): 
+- ["Miscellaneous Widgets"](https://docs.rilldata.com/developers/build/dashboards/canvas-widgets/misc): 
+- [Canvas Dashboards](https://docs.rilldata.com/developers/build/dashboards/canvas): Create custom dashboards by assembling visualizations and components
+- ["Customization & Themes"](https://docs.rilldata.com/developers/build/dashboards/customization): Alter dashboard look and feel
+- [Dashboards in Rill](https://docs.rilldata.com/developers/build/dashboards/dashboards-101): Understanding Explore vs Canvas dashboards and when to use each
+- [Create Dashboards](https://docs.rilldata.com/developers/build/dashboards/dashboards): Create and customize interactive dashboards for data exploration and analysis
+- [Explore Dashboards](https://docs.rilldata.com/developers/build/dashboards/explore): Explore dashboard overview
+- ["Debugging Rill Projects"](https://docs.rilldata.com/developers/build/debugging/index): "Tools and techniques for debugging Rill projects"
+- ["Trace Viewer in Rill Developer"](https://docs.rilldata.com/developers/build/debugging/trace-viewer): Visualize resource reconciliation and trace execution
+- [Build Rill Projects with Your Favorite IDE](https://docs.rilldata.com/developers/build/ide/ide): Use VS Code, IntelliJ, or any IDE to create and edit Rill projects with real-time feedback
+- ["Clickable Dimension Links"](https://docs.rilldata.com/developers/build/metrics-view/dimensions/dimension-uri): "Make dimension values clickable by adding URI parameters to create interactive links in your dashboards"
+- ["Define Your Dimensions"](https://docs.rilldata.com/developers/build/metrics-view/dimensions/dimensions): "Learn how to create and configure dimensions for data segmentation, filtering, and analysis in your metrics views"
+- ["Query-Time Dimension Joins"](https://docs.rilldata.com/developers/build/metrics-view/dimensions/lookup): "Use lookup dimensions to enrich your metrics view data with reference information at query time"
+- ["Time Dimensions"](https://docs.rilldata.com/developers/build/metrics-view/dimensions/time-dimensions): "Add multiple time dimensions to enable time-based filtering and analysis across different temporal columns"
+- ["Unnest Dimensions"](https://docs.rilldata.com/developers/build/metrics-view/dimensions/unnesting): Tips & Tricks for Measure Formatting
+- ["Case Statements and Filters"](https://docs.rilldata.com/developers/build/metrics-view/measures/case-statements): Tips & Tricks for Case Statements
+- ["Fixed Measures"](https://docs.rilldata.com/developers/build/metrics-view/measures/fixed-measures): Tips & Tricks for Fixed Measures
+- ["Formatting your Measures"](https://docs.rilldata.com/developers/build/metrics-view/measures/measures-formatting): Tips & Tricks for Measure Formatting
+- ["Define Your Measures"](https://docs.rilldata.com/developers/build/metrics-view/measures/measures): "Learn how to create and configure measures for quantitative analysis and business insights in your metrics views"
+- ["Quantiles"](https://docs.rilldata.com/developers/build/metrics-view/measures/quantiles): Tips & Tricks for Measure Quantiles
+- ["Referencing Measures"](https://docs.rilldata.com/developers/build/metrics-view/measures/referencing): Tips & Tricks for Referencing Measure
+- ["Window Functions"](https://docs.rilldata.com/developers/build/metrics-view/measures/windows): Tips & Tricks for Window Measures
+- [Time Series in Metrics Views](https://docs.rilldata.com/developers/build/metrics-view/time-series/time-series): "Configure time-based dimensions and aggregations for comprehensive temporal analysis"
+- [Annotations](https://docs.rilldata.com/developers/build/metrics-view/annotations): Enrich your metrics view with external context using annotations
+- [Derived Metrics Views](https://docs.rilldata.com/developers/build/metrics-view/derived-metrics-views): Create derived metrics views that inherit dimensions, measures, and properties from a parent metrics view
+- [Metrics SQL](https://docs.rilldata.com/developers/build/metrics-view/metrics-sql): Query metrics views using SQL syntax
+- [Create Metrics Views](https://docs.rilldata.com/developers/build/metrics-view/metrics-view): Create metrics views using source data and models with time, dimensions, and measures
+- [Rollups](https://docs.rilldata.com/developers/build/metrics-view/rollups): Accelerate metrics view queries by routing to pre-aggregated rollup tables
+- [Who Can Access Your Data](https://docs.rilldata.com/developers/build/metrics-view/security): Control who can view your metrics and data
+- [Powering your Metrics View](https://docs.rilldata.com/developers/build/metrics-view/underlying-model): 
+- [Get Started with Metrics Views](https://docs.rilldata.com/developers/build/metrics-view/what-are-metrics-views): Create metrics view using source data and models with time, dimensions, and measures
+- [Data Quality Tests](https://docs.rilldata.com/developers/build/models/data-quality-tests): 
+- [Schedule Your Data Refresh](https://docs.rilldata.com/developers/build/models/data-refresh): Manage refresh schedules for models deployed to Rill Cloud
+- [Incremental Models](https://docs.rilldata.com/developers/build/models/incremental-models): Create Incremental Models
+- [Incremental Partitioned Models](https://docs.rilldata.com/developers/build/models/incremental-partitioned-models): Create incremental partitioned models
+- [Models in Rill](https://docs.rilldata.com/developers/build/models/index): 
+- [When to use SQL vs YAML](https://docs.rilldata.com/developers/build/models/model-differences): Create models from source data and apply SQL transformations
+- [Introduction to Models](https://docs.rilldata.com/developers/build/models/models-101): Create models from source data and apply SQL transformations
+- [Partitioned Models](https://docs.rilldata.com/developers/build/models/partitioned-models): Create Partitioned Models
+- [Optimize Your Models](https://docs.rilldata.com/developers/build/models/performance): 
+- [Source Models](https://docs.rilldata.com/developers/build/models/source-models): 
+- [SQL Models](https://docs.rilldata.com/developers/build/models/sql-models): Create models from source data and apply SQL transformations
+- [Staging Models](https://docs.rilldata.com/developers/build/models/staging-models): When the source ingestion is not directly supported, use staging models
+- [Model Environment Templating](https://docs.rilldata.com/developers/build/models/templating): Dev/Prod Setup
+- [Structure your project](https://docs.rilldata.com/developers/build/structure/structure): 
+- ["AI Configuration"](https://docs.rilldata.com/developers/build/ai-configuration): "Configure AI instructions for your Rill project"
+- [Alerts](https://docs.rilldata.com/developers/build/alerts): Define alerts as code for automated monitoring and notifications
+- ["Your First Rill Project"](https://docs.rilldata.com/developers/build/getting-started): "Get started with Rill by understanding what happens when you create a project"
+- [Building Your Data Analytics Pipeline in Rill](https://docs.rilldata.com/developers/build/index): 
+- ["Project Configuration"](https://docs.rilldata.com/developers/build/project-configuration): "Complete guide to configuring your Rill project with rill.yaml and other project files"
+- [Deploy Dashboards](https://docs.rilldata.com/developers/deploy/deploy-dashboard/deploy-dashboard): 
+- [Deploy to Rill Cloud from GitLab](https://docs.rilldata.com/developers/deploy/deploy-dashboard/deploy-from-cli): How to set up continuous deploys to Rill Cloud from GitLab
+- ["GitHub Basics"](https://docs.rilldata.com/developers/deploy/deploy-dashboard/github-101): GitHub Basics for Deployment
+- [Rill Cloud vs Rill Developer](https://docs.rilldata.com/developers/deploy/cloud-vs-developer): 
+- [Deployment Credential Considerations](https://docs.rilldata.com/developers/deploy/deploy-credentials): Configuring credentials for your deployed project on Rill Cloud
+- [Publish your Dashboards to Rill Cloud](https://docs.rilldata.com/developers/deploy/index): 
+- [Managing Project Errors](https://docs.rilldata.com/developers/deploy/project-errors): Configure alerts and manage errors for deployed projects in Rill Cloud
+- [Embed Dashboards in an Iframe](https://docs.rilldata.com/developers/embed/iframe): Embed Rill dashboards in your own applications using iframes
+- [Embed Rill into your Application](https://docs.rilldata.com/developers/embed/index): 
+- [Iframe postMessage API](https://docs.rilldata.com/developers/embed/postmessage): Communicate with your embedded dashboards via postMessage.
+- ["Building Rill Projects with AI"](https://docs.rilldata.com/developers/get-started/ai-quickstart): 
+- [Get Started with Rill](https://docs.rilldata.com/developers/get-started/get-started): 
+- [How to Install Rill Developer](https://docs.rilldata.com/developers/get-started/install): 
+- [Getting Started with Rill Developer](https://docs.rilldata.com/developers/get-started/quickstart): 
+- [Why Rill?](https://docs.rilldata.com/developers/get-started/why-rill): 
+- ["Managed AWS S3 Bucket"](https://docs.rilldata.com/developers/other/granting/aws-s3-bucket): Setting up S3 access
+- ["Managed Azure Storage Container"](https://docs.rilldata.com/developers/other/granting/azure-storage-container): Azure Storage Container
+- ["Managed GCS Bucket"](https://docs.rilldata.com/developers/other/granting/gcs-bucket): Setting up GCS access
+- ["Managed Google BigQuery"](https://docs.rilldata.com/developers/other/granting/google-bigquery): Setting up BigQuery access
+- ["Rill Managed Pipelines"](https://docs.rilldata.com/developers/other/granting/granting): Rill Managed Pipelines
+- [FAQ](https://docs.rilldata.com/developers/other/FAQ): 
+- ["Billing Plans Explained"](https://docs.rilldata.com/developers/other/plans): How billing works for non-enterprise accounts
+- ["1. Source to Dashboard on Rill Cloud in 6 Steps"](https://docs.rilldata.com/developers/tutorials/rill-basics/1-launch): 
+- ["2. Import the Source"](https://docs.rilldata.com/developers/tutorials/rill-basics/2-import): 
+- ["3. Create a SQL Model"](https://docs.rilldata.com/developers/tutorials/rill-basics/3-model): 
+- ["4. Create the Metrics View"](https://docs.rilldata.com/developers/tutorials/rill-basics/4-metrics-view): 
+- ["5. Create an Explore and Canvas Dashboard"](https://docs.rilldata.com/developers/tutorials/rill-basics/5-dashboard): 
+- [6. Deploy to Rill Cloud](https://docs.rilldata.com/developers/tutorials/rill-basics/6-deploy): 
+- [Deployment Success!](https://docs.rilldata.com/developers/tutorials/rill-basics/success): 
+- ["1. Launch Rill Developer"](https://docs.rilldata.com/developers/tutorials/rill-clickhouse/1-r_ch_launch): 
+- ["2. Connect to ClickHouse"](https://docs.rilldata.com/developers/tutorials/rill-clickhouse/2-r_ch_connect): 
+- ["3. Create Metrics View Dashboard in Rill"](https://docs.rilldata.com/developers/tutorials/rill-clickhouse/3-r_ch_metrics-view): 
+- ["4. Create Explore Dashboard in Rill"](https://docs.rilldata.com/developers/tutorials/rill-clickhouse/4-r_ch_dashboard): 
+- ["5. Deploy to Rill Cloud"](https://docs.rilldata.com/developers/tutorials/rill-clickhouse/5-r_ch_deploy): 
+- [Visualize your ClickHouse Tables in Rill!](https://docs.rilldata.com/developers/tutorials/rill-clickhouse/index): tutorial for ClickHouse
+- ["Ingesting Data into ClickHouse"](https://docs.rilldata.com/developers/tutorials/rill-clickhouse/r_ch_ingest): 
+- ["Clone a Project - Quick Start"](https://docs.rilldata.com/developers/tutorials/clone-a-project): 
+- ["Cost Monitoring Analytics Demo"](https://docs.rilldata.com/developers/tutorials/cost-monitoring-analytics): 
+- ["Analyze Your GitHub Repository"](https://docs.rilldata.com/developers/tutorials/github-analytics): 
+- [""](https://docs.rilldata.com/developers/tutorials/index): 
+- ["Integrating with Rill's Admin API"](https://docs.rilldata.com/developers/tutorials/integrating-with-rill): 
+- ["OpenRTB Analytics Demo"](https://docs.rilldata.com/developers/tutorials/openrtb-analytics): 
+- [Troubleshooting Performance in Rill](https://docs.rilldata.com/developers/tutorials/performance): Dev/Prod Setup
+- ["Set up MCP and more!"](https://docs.rilldata.com/developers/tutorials/setting-up-mcp): 
+- ["Access Tokens"](https://docs.rilldata.com/guide/administration/access-tokens/index): "Manage access tokens in Rill Cloud"
+- [Service Tokens](https://docs.rilldata.com/guide/administration/access-tokens/service-tokens): Create and manage service tokens for programmatic access to Rill
+- [User Tokens](https://docs.rilldata.com/guide/administration/access-tokens/user-tokens): Create and manage personal access tokens for development and scripting
+- ["GitHub Integration"](https://docs.rilldata.com/guide/administration/project-settings/github-integration): "Connect and manage GitHub repository integration for your Rill Cloud projects"
+- ["Managing Projects in Rill Cloud"](https://docs.rilldata.com/guide/administration/project-settings/project-settings): Basic management for projects
+- [Environment Variables and Credentials in Rill Cloud](https://docs.rilldata.com/guide/administration/project-settings/variables-and-credentials): 
+- ["Users and Access"](https://docs.rilldata.com/guide/administration/users-and-access/index): "Manage users, groups, and access controls in Rill Cloud"
+- [Roles and Permissions](https://docs.rilldata.com/guide/administration/users-and-access/roles-permissions): Learn more about roles and permissions for organizations and projects in Rill Cloud
+- [User Management](https://docs.rilldata.com/guide/administration/users-and-access/user-management): 
+- [User Group Permissions](https://docs.rilldata.com/guide/administration/users-and-access/usergroup-management): 
+- ["Settings"](https://docs.rilldata.com/guide/administration/index): "Configure organization and project settings in Rill Cloud"
+- ["Managing Organizations in Rill Cloud"](https://docs.rilldata.com/guide/administration/organization-settings): Basic management for organizations
+- ["Contextual AI Chat"](https://docs.rilldata.com/guide/ai/ai-chat): Chat with your data using natural language in Rill Cloud
+- ["AI Features"](https://docs.rilldata.com/guide/ai/index): "AI-powered tools for exploring and analyzing your data"
+- ["Rill MCP Server"](https://docs.rilldata.com/guide/ai/mcp): How to connect to Rill MCP and query your metrics views
+- ["Alerts"](https://docs.rilldata.com/guide/alerts/index): Setting up Alerts in Rill
+- ["Explore Dashboard Quickstart"](https://docs.rilldata.com/guide/dashboards/explore/explore): Dashboard Quickstart
+- ["Multiple Measure Leaderboard"](https://docs.rilldata.com/guide/dashboards/explore/multi-metrics): Expanding your leaderboard
+- ["Pivot and Flat Tables"](https://docs.rilldata.com/guide/dashboards/explore/pivot): Pivot
+- ["Time Dimension Detail"](https://docs.rilldata.com/guide/dashboards/explore/tdd): Time Dimension Detail
+- ["Bookmarks & Sharing"](https://docs.rilldata.com/guide/dashboards/bookmarks): Creating & Sharing Saved Views in Rill
+- [Canvas Dashboards](https://docs.rilldata.com/guide/dashboards/canvas): 
+- ["Filters & Comparisons"](https://docs.rilldata.com/guide/dashboards/filters): Filters & Comparisons
+- ["Dashboards"](https://docs.rilldata.com/guide/dashboards/index): "Explore and interact with your data through Rill dashboards"
+- ["Sharing Dashboards with a Public URL"](https://docs.rilldata.com/guide/dashboards/public-urls): Share dashboards with a few clicks using a public link
+- ["Time Series Filter"](https://docs.rilldata.com/guide/dashboards/time-series): 
+- ["Getting Started with Rill Cloud"](https://docs.rilldata.com/guide/guide/guide): "Introduction to Rill Cloud, AI features, and management"
+- ["Exports & Scheduled Reports"](https://docs.rilldata.com/guide/reports/exports): Downloading and exporting data from Rill
+- [rill billing plan list](https://docs.rilldata.com/reference/cli/billing/plan/list): 
+- [rill billing plan](https://docs.rilldata.com/reference/cli/billing/plan/plan): 
+- [rill billing subscription cancel](https://docs.rilldata.com/reference/cli/billing/subscription/cancel): 
+- [rill billing subscription edit](https://docs.rilldata.com/reference/cli/billing/subscription/edit): 
+- [rill billing subscription list](https://docs.rilldata.com/reference/cli/billing/subscription/list): 
+- [rill billing subscription renew](https://docs.rilldata.com/reference/cli/billing/subscription/renew): 
+- [rill billing subscription](https://docs.rilldata.com/reference/cli/billing/subscription/subscription): 
+- [rill billing](https://docs.rilldata.com/reference/cli/billing/billing): 
+- [rill billing list-issues](https://docs.rilldata.com/reference/cli/billing/list-issues): 
+- [rill docs](https://docs.rilldata.com/reference/cli/docs/docs): 
+- [rill env configure](https://docs.rilldata.com/reference/cli/env/configure): 
+- [rill env](https://docs.rilldata.com/reference/cli/env/env): 
+- [rill env pull](https://docs.rilldata.com/reference/cli/env/pull): 
+- [rill env push](https://docs.rilldata.com/reference/cli/env/push): 
+- [rill env rm](https://docs.rilldata.com/reference/cli/env/rm): 
+- [rill env set](https://docs.rilldata.com/reference/cli/env/set): 
+- [rill env show](https://docs.rilldata.com/reference/cli/env/show): 
+- [rill org create](https://docs.rilldata.com/reference/cli/org/create): 
+- [rill org delete](https://docs.rilldata.com/reference/cli/org/delete): 
+- [rill org edit](https://docs.rilldata.com/reference/cli/org/edit): 
+- [rill org list](https://docs.rilldata.com/reference/cli/org/list): 
+- [rill org](https://docs.rilldata.com/reference/cli/org/org): 
+- [rill org rename](https://docs.rilldata.com/reference/cli/org/rename): 
+- [rill org show](https://docs.rilldata.com/reference/cli/org/show): 
+- [rill org switch](https://docs.rilldata.com/reference/cli/org/switch): 
+- [rill org upload-favicon](https://docs.rilldata.com/reference/cli/org/upload-favicon): 
+- [rill org upload-logo](https://docs.rilldata.com/reference/cli/org/upload-logo): 
+- [rill project deployment create](https://docs.rilldata.com/reference/cli/project/deployment/create): 
+- [rill project deployment delete](https://docs.rilldata.com/reference/cli/project/deployment/delete): 
+- [rill project deployment](https://docs.rilldata.com/reference/cli/project/deployment/deployment): 
+- [rill project deployment list](https://docs.rilldata.com/reference/cli/project/deployment/list): 
+- [rill project deployment show](https://docs.rilldata.com/reference/cli/project/deployment/show): 
+- [rill project deployment start](https://docs.rilldata.com/reference/cli/project/deployment/start): 
+- [rill project deployment stop](https://docs.rilldata.com/reference/cli/project/deployment/stop): 
+- [rill project clone](https://docs.rilldata.com/reference/cli/project/clone): 
+- [rill project connect-github](https://docs.rilldata.com/reference/cli/project/connect-github): 
+- [rill project delete](https://docs.rilldata.com/reference/cli/project/delete): 
+- [rill project deploy](https://docs.rilldata.com/reference/cli/project/deploy): 
+- [rill project describe](https://docs.rilldata.com/reference/cli/project/describe): 
+- [rill project edit](https://docs.rilldata.com/reference/cli/project/edit): 
+- [rill project hibernate](https://docs.rilldata.com/reference/cli/project/hibernate): 
+- [rill project list](https://docs.rilldata.com/reference/cli/project/list): 
+- [rill project logs](https://docs.rilldata.com/reference/cli/project/logs): 
+- [rill project partitions](https://docs.rilldata.com/reference/cli/project/partitions): 
+- [rill project](https://docs.rilldata.com/reference/cli/project/project): 
+- [rill project refresh](https://docs.rilldata.com/reference/cli/project/refresh): 
+- [rill project rename](https://docs.rilldata.com/reference/cli/project/rename): 
+- [rill project show](https://docs.rilldata.com/reference/cli/project/show): 
+- [rill project skip-partition](https://docs.rilldata.com/reference/cli/project/skip-partition): 
+- [rill project status](https://docs.rilldata.com/reference/cli/project/status): 
+- [rill project tables](https://docs.rilldata.com/reference/cli/project/tables): 
+- [rill public-url create](https://docs.rilldata.com/reference/cli/public-url/create): 
+- [rill public-url delete](https://docs.rilldata.com/reference/cli/public-url/delete): 
+- [rill public-url list](https://docs.rilldata.com/reference/cli/public-url/list): 
+- [rill public-url](https://docs.rilldata.com/reference/cli/public-url/public-url): 
+- [rill service token issue](https://docs.rilldata.com/reference/cli/service/token/issue): 
+- [rill service token list](https://docs.rilldata.com/reference/cli/service/token/list): 
+- [rill service token revoke](https://docs.rilldata.com/reference/cli/service/token/revoke): 
+- [rill service token](https://docs.rilldata.com/reference/cli/service/token/token): 
+- [rill service create](https://docs.rilldata.com/reference/cli/service/create): 
+- [rill service delete](https://docs.rilldata.com/reference/cli/service/delete): 
+- [rill service edit](https://docs.rilldata.com/reference/cli/service/edit): 
+- [rill service list](https://docs.rilldata.com/reference/cli/service/list): 
+- [rill service remove](https://docs.rilldata.com/reference/cli/service/remove): 
+- [rill service](https://docs.rilldata.com/reference/cli/service/service): 
+- [rill service set-role](https://docs.rilldata.com/reference/cli/service/set-role): 
+- [rill service show](https://docs.rilldata.com/reference/cli/service/show): 
+- [rill token issue](https://docs.rilldata.com/reference/cli/token/issue): 
+- [rill token list](https://docs.rilldata.com/reference/cli/token/list): 
+- [rill token revoke](https://docs.rilldata.com/reference/cli/token/revoke): 
+- [rill token](https://docs.rilldata.com/reference/cli/token/token): 
+- [rill user whitelist list](https://docs.rilldata.com/reference/cli/user/whitelist/list): 
+- [rill user whitelist remove](https://docs.rilldata.com/reference/cli/user/whitelist/remove): 
+- [rill user whitelist setup](https://docs.rilldata.com/reference/cli/user/whitelist/setup): 
+- [rill user whitelist](https://docs.rilldata.com/reference/cli/user/whitelist/whitelist): 
+- [rill user add](https://docs.rilldata.com/reference/cli/user/add): 
+- [rill user list](https://docs.rilldata.com/reference/cli/user/list): 
+- [rill user remove](https://docs.rilldata.com/reference/cli/user/remove): 
+- [rill user set-attributes](https://docs.rilldata.com/reference/cli/user/set-attributes): 
+- [rill user set-resources](https://docs.rilldata.com/reference/cli/user/set-resources): 
+- [rill user set-role](https://docs.rilldata.com/reference/cli/user/set-role): 
+- [rill user show](https://docs.rilldata.com/reference/cli/user/show): 
+- [rill user](https://docs.rilldata.com/reference/cli/user/user): 
+- [rill usergroup add](https://docs.rilldata.com/reference/cli/usergroup/add): 
+- [rill usergroup create](https://docs.rilldata.com/reference/cli/usergroup/create): 
+- [rill usergroup delete](https://docs.rilldata.com/reference/cli/usergroup/delete): 
+- [rill usergroup edit](https://docs.rilldata.com/reference/cli/usergroup/edit): 
+- [rill usergroup list](https://docs.rilldata.com/reference/cli/usergroup/list): 
+- [rill usergroup remove](https://docs.rilldata.com/reference/cli/usergroup/remove): 
+- [rill usergroup rename](https://docs.rilldata.com/reference/cli/usergroup/rename): 
+- [rill usergroup set-resources](https://docs.rilldata.com/reference/cli/usergroup/set-resources): 
+- [rill usergroup set-role](https://docs.rilldata.com/reference/cli/usergroup/set-role): 
+- [rill usergroup show](https://docs.rilldata.com/reference/cli/usergroup/show): 
+- [rill usergroup](https://docs.rilldata.com/reference/cli/usergroup/usergroup): 
+- [rill chat](https://docs.rilldata.com/reference/cli/chat): 
+- [CLI usage](https://docs.rilldata.com/reference/cli/cli): 
+- [rill deploy](https://docs.rilldata.com/reference/cli/deploy): 
+- [rill init](https://docs.rilldata.com/reference/cli/init): 
+- [rill login](https://docs.rilldata.com/reference/cli/login): 
+- [rill logout](https://docs.rilldata.com/reference/cli/logout): 
+- [rill query](https://docs.rilldata.com/reference/cli/query): 
+- [rill start](https://docs.rilldata.com/reference/cli/start): 
+- [rill uninstall](https://docs.rilldata.com/reference/cli/uninstall): 
+- [rill upgrade](https://docs.rilldata.com/reference/cli/upgrade): 
+- [rill validate](https://docs.rilldata.com/reference/cli/validate): 
+- [rill version](https://docs.rilldata.com/reference/cli/version): 
+- [rill whoami](https://docs.rilldata.com/reference/cli/whoami): 
+- [Alert YAML](https://docs.rilldata.com/reference/project-files/alerts): 
+- [API YAML](https://docs.rilldata.com/reference/project-files/apis): 
+- [Canvas Dashboard YAML](https://docs.rilldata.com/reference/project-files/canvas-dashboards): 
+- [Component YAML](https://docs.rilldata.com/reference/project-files/component): 
+- [Connector YAML](https://docs.rilldata.com/reference/project-files/connectors): 
+- [Explore Dashboard YAML](https://docs.rilldata.com/reference/project-files/explore-dashboards): 
+- [YAML Syntax](https://docs.rilldata.com/reference/project-files/index): 
+- [Metrics View YAML](https://docs.rilldata.com/reference/project-files/metrics-views): 
+- [Models YAML](https://docs.rilldata.com/reference/project-files/models): 
+- [Report YAML](https://docs.rilldata.com/reference/project-files/reports): 
+- [Project YAML](https://docs.rilldata.com/reference/project-files/rill-yaml): 
+- [Source YAML](https://docs.rilldata.com/reference/project-files/sources): 
+- [Theme YAML](https://docs.rilldata.com/reference/project-files/themes): 
+- [Rill ISO 8601 Extensions](https://docs.rilldata.com/reference/time-syntax/rill-iso-extensions): Legacy rill- prefixed time syntax extensions
+- [Time Range Syntax](https://docs.rilldata.com/reference/time-syntax/time-syntax): Complete reference for Rill's time range syntax
+- [Dashboard URL Parameters](https://docs.rilldata.com/reference/url-syntax/url-parameters): Reference for all URL query parameters that control Rill dashboard state.

@@ -1,0 +1,65 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.rilldata.com/reference/cli
+name: rill
+docs: https://docs.rilldata.com/reference/cli
+repo: https://github.com/rilldata/rill/tree/main/cli
+install:
+  - method: script
+    command: curl https://rill.sh | sh
+  - method: homebrew
+    command: brew install rilldata/tap/rill
+  - method: upgrade
+    command: rill upgrade
+description: >-
+  First-party Rill CLI — runs the local Rill Developer app, deploys projects to
+  Rill Cloud, and administers orgs, projects, users, tokens, and billing. Same
+  binary powers both local development and cloud administration.
+commands:
+  - group: start
+    summary: Start the local Rill Developer server.
+  - group: init
+    summary: Initialize a new Rill project.
+  - group: deploy
+    summary: Push a project to Rill Cloud.
+  - group: login
+    summary: Authenticate the CLI (also logout).
+  - group: whoami
+    summary: Show the current authenticated user.
+  - group: org
+    summary: Manage organizations.
+  - group: project
+    summary: Manage projects.
+  - group: user
+    summary: Manage users.
+  - group: usergroup
+    summary: Manage user groups.
+  - group: service
+    summary: Manage service accounts / service tokens.
+  - group: token
+    summary: Issue, list, and revoke personal access tokens.
+  - group: env
+    summary: Manage project environment variables.
+  - group: billing
+    summary: Manage organization billing.
+  - group: query
+    summary: Query data from the command line.
+  - group: chat
+    summary: Interact with Rill AI from the terminal.
+  - group: public-url
+    summary: Create and manage public dashboard URLs.
+  - group: validate
+    summary: Validate Rill project resources.
+  - group: docs
+    summary: Open the documentation.
+  - group: version
+    summary: Show the CLI version.
+  - group: upgrade
+    summary: Upgrade to the latest version.
+  - group: uninstall
+    summary: Remove the Rill CLI.
+key_flows:
+  - "rill start           # local dev server"
+  - "rill deploy          # ship project to Rill Cloud"
+  - "rill token issue     # create a personal access token for API/MCP use"
+  - "rill service create  # create a service account for automation"

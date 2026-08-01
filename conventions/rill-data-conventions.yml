@@ -1,0 +1,47 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/rill-data-admin-openapi.yaml
+docs: https://docs.rilldata.com
+authentication:
+  style: bearer-token
+  header: Authorization
+  detail: authentication/rill-data-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: lifecycle/rill-data-lifecycle.yml
+pagination:
+  style: cursor
+  request_params:
+    page_size: pageSize
+    page_token: pageToken
+  response_fields:
+    next_page_token: nextPageToken
+  notes: >-
+    Standard gRPC/Connect list-pagination: pass pageSize + pageToken; the
+    response returns nextPageToken until exhausted. Verified across the List*
+    admin operations in the OpenAPI.
+idempotency:
+  supported: false
+  notes: >-
+    Rill's admin API does not document an idempotency-key header. Resource
+    creation is name-scoped within an org/project (creating an existing name
+    conflicts), which provides natural dedupe but is not an idempotency contract.
+error_envelope:
+  format: grpc-status
+  shape: '{ "code": <int>, "message": <string>, "details": [ ... ] }'
+  schema: rpcStatus
+  content_type: application/json
+  detail: errors/rill-data-problem-types.yml
+  notes: >-
+    Errors follow the gRPC/Connect canonical status model (google.rpc.Status):
+    an integer code, a human message, and an optional details array. This is a
+    Connect/grpc-gateway API, not an RFC 9457 problem+json API.
+transport:
+  protocols: [https-json, grpc, connect]
+  base_url: https://api.rilldata.com
+  notes: >-
+    The API is defined in Protobuf (proto/rill/admin/v1) and exposed over both
+    gRPC/Connect and a JSON/HTTP transcoding at api.rilldata.com.
+rate_limiting:
+  documented: false

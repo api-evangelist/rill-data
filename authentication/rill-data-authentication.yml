@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.rilldata.com/guide/administration/access-tokens/user-tokens
+docs: https://docs.rilldata.com/guide/administration/access-tokens/user-tokens
+summary:
+  types: [http-bearer, oauth2]
+  api_key_in: [header]
+  oauth2_flows: [authorizationCode, deviceCode]
+schemes:
+  - name: bearerToken
+    type: http
+    scheme: bearer
+    location: header
+    header: Authorization
+    format: "Authorization: Bearer <token>"
+    token_types:
+      - kind: user-token
+        description: >-
+          Personal access token tied to an individual user account; inherits the
+          user's org role (admin/editor/viewer/guest) and project roles
+          (admin/editor/viewer). Issued via `rill token issue`.
+        management: [rill token issue, rill token list, rill token revoke]
+      - kind: service-token
+        description: Organization-scoped token for programmatic/automated (non-user) access.
+    sources: [https://docs.rilldata.com/guide/administration/access-tokens/user-tokens]
+  - name: oauth2
+    type: oauth2
+    description: >-
+      OAuth 2.1 authorization-code flow with PKCE used by the hosted Rill MCP
+      server and OAuth-based connectors. Advertised via RFC 8414 metadata at
+      https://api.rilldata.com/.well-known/oauth-authorization-server.
+    authorization_endpoint: https://admin.rilldata.com/auth/oauth/authorize
+    token_endpoint: https://admin.rilldata.com/auth/oauth/token
+    registration_endpoint: https://admin.rilldata.com/auth/oauth/register
+    jwks_uri: https://admin.rilldata.com/.well-known/jwks.json
+    grant_types: [authorization_code, "urn:ietf:params:oauth:grant-type:device_code", refresh_token]
+    pkce: S256
+    scopes: [offline_access]
+    sources: [well-known/rill-data-oauth-authorization-server.json]
+permissions_model: >-
+  Rill uses role-based access (admin/editor/viewer/guest at the org level;
+  admin/editor/viewer at the project level) plus attribute-based security
+  policies (email, domain, groups). The admin REST API has no per-request OAuth
+  scope surface beyond the token's inherited roles.

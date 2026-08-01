@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/rill-data-admin-openapi.yaml
+format: grpc-status
+envelope:
+  schema: rpcStatus
+  fields: [code, message, details]
+  content_type: application/json
+  notes: >-
+    Every operation in the Rill admin OpenAPI declares a `default` response of
+    schema rpcStatus (google.rpc.Status). Rill is a Connect/grpc-gateway API, so
+    errors use the canonical gRPC status model rather than RFC 9457 problem+json.
+    The list below maps the canonical gRPC codes to their HTTP equivalents.
+problems:
+  - grpc_code: 3
+    http_status: 400
+    title: INVALID_ARGUMENT
+    remediation: Fix malformed or invalid request fields.
+  - grpc_code: 16
+    http_status: 401
+    title: UNAUTHENTICATED
+    remediation: Provide a valid Authorization Bearer token (user or service token).
+  - grpc_code: 7
+    http_status: 403
+    title: PERMISSION_DENIED
+    remediation: Token lacks the required org/project role for this operation.
+  - grpc_code: 5
+    http_status: 404
+    title: NOT_FOUND
+    remediation: The referenced org/project/deployment/resource does not exist.
+  - grpc_code: 6
+    http_status: 409
+    title: ALREADY_EXISTS
+    remediation: A resource with that name already exists in the scope.
+  - grpc_code: 8
+    http_status: 429
+    title: RESOURCE_EXHAUSTED
+    remediation: Quota or rate limit exceeded; retry with backoff.
+  - grpc_code: 9
+    http_status: 400
+    title: FAILED_PRECONDITION
+    remediation: The system is not in a state required for the operation.
+  - grpc_code: 13
+    http_status: 500
+    title: INTERNAL
+    remediation: Server error; retry and contact Rill support if it persists.
+  - grpc_code: 14
+    http_status: 503
+    title: UNAVAILABLE
+    remediation: Service temporarily unavailable; retry with backoff.

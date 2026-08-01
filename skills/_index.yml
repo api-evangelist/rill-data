@@ -1,0 +1,18 @@
+generated: '2026-07-21'
+method: generated
+skills:
+  - file: rill-data-AGENTS.md
+    name: Rill project development (provider-published)
+    method: searched
+    source: https://github.com/rilldata/rill/blob/main/runtime/ai/instructions/data/AGENTS.md
+    description: >-
+      Rill's own AGENTS.md entry point that directs agents to load the
+      `rill-development` skill before changing a Rill project.
+  - file: rill-data-query-metrics.md
+    name: Query Rill metrics views
+    api: mcp/rill-data-mcp.yml
+    operations: [list_metrics_views, get_metrics_view, query_metrics_view_summary, query_metrics_view]
+  - file: rill-data-manage-project.md
+    name: Provision a Rill org, project, and members
+    api: openapi/rill-data-admin-openapi.yaml
+    operations: [AdminService_CreateOrganization, AdminService_CreateProject, AdminService_GetProject, AdminService_AddProjectMemberUser, AdminService_SetProjectMemberUserRole]

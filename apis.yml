@@ -1,8 +1,16 @@
 aid: rill-data
 name: Rill Data
-description: Rill Data is a company surfaced as a portfolio company of bloomberg-beta, dcvc, sierra-ventures
-  and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the
-  enrichment pipeline.
+description: >-
+  Rill Data builds Rill, an operational business-intelligence tool for fast,
+  exploratory dashboards on large event and time-series data. Developers connect
+  data sources, model last-mile transformations in SQL/YAML, define a governed
+  metrics layer, and publish interactive dashboards — locally with the free Rill
+  Developer app or hosted on Rill Cloud. Rill is open source (Go/TypeScript) and
+  exposes a Protobuf-defined admin API over gRPC/Connect and JSON/HTTP at
+  api.rilldata.com, a first-party CLI, embeddable dashboards, custom data APIs,
+  and an official hosted Model Context Protocol (MCP) server that lets LLMs query
+  its governed metrics views. Rill Data is a portfolio company of Bloomberg Beta,
+  DCVC, and Sierra Ventures.
 url: https://raw.githubusercontent.com/api-evangelist/rill-data/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,19 +18,119 @@ x-backed-by:
 - bloomberg-beta
 - dcvc
 - sierra-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: portfolio-lead-enriched
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.rilldata.com/favicon.ico
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Analytics
+- Business Intelligence
+- Dashboards
+- Metrics
+- Data
+- OLAP
+- Open Source
+- Developer Tools
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: rill-data:rill-data-orgs-api
+  name: Rill Data Orgs API
+  description: The Orgs API from Rill Data — 17 operation(s) for orgs.
+  humanURL: https://docs.rilldata.com
+  baseURL: https://api.rilldata.com
+  tags:
+  - Orgs
+  properties:
+  - type: OpenAPI
+    url: openapi/rill-data-orgs-api-openapi.yml
+  - type: Protobuf
+    url: grpc/rill-data-admin.proto
+  - type: Protobuf
+    url: grpc/rill-data-runtime.proto
+  - type: Authentication
+    url: authentication/rill-data-authentication.yml
+  - type: OAuthScopes
+    url: scopes/rill-data-scopes.yml
+  - type: ErrorCatalog
+    url: errors/rill-data-problem-types.yml
+  - type: Conventions
+    url: conventions/rill-data-conventions.yml
+  - type: DataModel
+    url: data-model/rill-data-data-model.yml
 common:
 - type: Website
   url: https://www.rilldata.com
+- type: DeveloperPortal
+  url: https://docs.rilldata.com
+- type: Documentation
+  url: https://docs.rilldata.com
+- type: APIReference
+  url: https://docs.rilldata.com/reference/api
+- type: GettingStarted
+  url: https://docs.rilldata.com/home/get-started
+- type: Blog
+  url: https://www.rilldata.com/blog
+- type: Pricing
+  url: https://www.rilldata.com/pricing
+- type: SignUp
+  url: https://ui.rilldata.com
+- type: Login
+  url: https://ui.rilldata.com
+- type: PrivacyPolicy
+  url: https://www.rilldata.com/privacy-policy
+- type: Support
+  url: https://discord.gg/2ubRfjC7Rh
+- type: GitHubOrganization
+  url: https://github.com/rilldata
+- type: StatusPage
+  url: https://status.rilldata.com
+- type: Lifecycle
+  url: lifecycle/rill-data-lifecycle.yml
+- type: ChangeLog
+  url: changelog/rill-data-changelog.yml
+- type: CLI
+  url: cli/rill-data-cli.yml
+- type: Packages
+  url: packages/rill-data-packages.yml
+- type: MCPServer
+  url: mcp/rill-data-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Sandbox
+  url: sandbox/rill-data-sandbox.yml
+- type: LLMsTxt
+  url: llms/rill-data-llms.txt
+- type: WellKnown
+  url: well-known/rill-data-well-known.yml
+- type: Conformance
+  url: conformance/rill-data-conformance.yml
+- type: Compliance
+  url: https://trust.rilldata.com/
+- type: TrustCenter
+  url: security/rill-data-trust-center.yml
+- type: DomainSecurity
+  url: security/rill-data-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 26
+  pass: local-v1

@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source: well-known/rill-data-oauth-authorization-server.json
+docs: https://docs.rilldata.com/guide/ai/mcp
+schemes:
+  - name: OAuth2
+    source: well-known/rill-data-oauth-authorization-server.json
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://admin.rilldata.com/auth/oauth/authorize
+        tokenUrl: https://admin.rilldata.com/auth/oauth/token
+        registrationUrl: https://admin.rilldata.com/auth/oauth/register
+        pkce: S256
+      - flow: deviceCode
+        tokenUrl: https://admin.rilldata.com/auth/oauth/token
+scopes:
+  - scope: offline_access
+    description: >-
+      Issue a refresh token so the client (e.g. an MCP connector) can maintain
+      long-lived access without re-authorizing. This is the only scope Rill's
+      OAuth authorization server advertises as supported.
+    flows: [authorizationCode, deviceCode]
+    sources: [well-known/rill-data-oauth-authorization-server.json]
+notes: >-
+  Rill's OAuth authorization server advertises a single scope (offline_access);
+  effective authorization is governed by the user's org/project roles rather
+  than fine-grained OAuth scopes. Once authorized, data-plane access is scoped
+  to the specific org/project/branch encoded in the MCP/runtime URL.

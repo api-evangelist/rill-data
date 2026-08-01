@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/rilldata/rill
+notes: >-
+  Rill is distributed primarily as a single Go binary (the `rill` CLI, which is
+  both the local Rill Developer app and the Cloud admin client) rather than as a
+  set of per-language client SDKs. The API contract is Protobuf-defined and
+  exposed over gRPC/Connect + JSON/HTTP; there is no dedicated first-party
+  REST client SDK library. The MCP integration reuses the community `mcp-remote`
+  npm shim (third-party) plus OAuth.
+packages:
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/rilldata/rill
+    url: https://pkg.go.dev/github.com/rilldata/rill
+    install: go install github.com/rilldata/rill/cli@latest
+    official: true
+    kind: cli-source
+  - language: shell
+    registry: rill.sh
+    name: rill
+    url: https://docs.rilldata.com/reference/cli
+    install: curl https://rill.sh | sh
+    official: true
+    kind: cli-binary
+  - language: shell
+    registry: homebrew
+    name: rilldata/tap/rill
+    url: https://github.com/rilldata/homebrew-tap
+    install: brew install rilldata/tap/rill
+    official: true
+    kind: cli-binary

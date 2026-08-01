@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/rilldata/rill/releases
+versioning:
+  api_scheme: uri-path
+  api_current: v1
+  product_scheme: semver
+  product_current: v0.88.1
+  docs: https://docs.rilldata.com
+release_cadence:
+  detail: >-
+    Rill ships the open-source engine on a rapid semver cadence (multiple minor
+    and patch releases per month) via GitHub Releases; 322+ tagged releases as
+    of July 2026. The v1 admin API path is stable across product releases.
+  changelog: changelog/rill-data-changelog.yml
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No formal public deprecation/Sunset-header policy located.
+sla:
+  url: https://trust.rilldata.com/
+  uptime_target: null
+status_page: https://status.rilldata.com
+deprecated_operations: []

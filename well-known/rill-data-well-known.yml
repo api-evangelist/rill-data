@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: live probe of /.well-known/* on Rill hosts
+host: https://api.rilldata.com
+documents:
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: rill-data-oauth-authorization-server.json
+  standard: RFC 8414
+- path: /.well-known/oauth-protected-resource
+  status: 200
+  file: rill-data-oauth-protected-resource.json
+  standard: RFC 9728
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+notes: >-
+  Rill exposes RFC 8414 OAuth 2.0 Authorization Server Metadata and RFC 9728
+  OAuth 2.0 Protected Resource Metadata at api.rilldata.com; these power the
+  OAuth flow used by the hosted Rill MCP server. The authorization server
+  advertises PKCE (S256), dynamic client registration, and device_code +
+  authorization_code + refresh_token grants.

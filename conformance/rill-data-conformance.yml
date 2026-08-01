@@ -1,0 +1,47 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  well-known/rill-data-oauth-authorization-server.json;
+  well-known/rill-data-oauth-protected-resource.json;
+  https://trust.rilldata.com/
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: RFC 6749 authorization server at admin.rilldata.com (authorize/token endpoints)
+  - id: oauth2-pkce
+    conforms: true
+    evidence: code_challenge_methods_supported includes S256 in authorization-server metadata
+  - id: rfc8414-authorization-server-metadata
+    conforms: true
+    evidence: /.well-known/oauth-authorization-server returns 200 with issuer/endpoints
+  - id: rfc9728-protected-resource-metadata
+    conforms: true
+    evidence: /.well-known/oauth-protected-resource returns 200
+  - id: rfc7591-dynamic-client-registration
+    conforms: true
+    evidence: registration_endpoint advertised in authorization-server metadata
+  - id: oauth2-device-authorization-grant
+    conforms: true
+    evidence: grant_types_supported includes urn:ietf:params:oauth:grant-type:device_code
+  - id: grpc
+    conforms: true
+    evidence: API defined in Protobuf (proto/rill/admin/v1), served over gRPC/Connect
+  - id: connect-rpc
+    conforms: true
+    evidence: Connect/grpc-gateway JSON transcoding at api.rilldata.com
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: errors use gRPC google.rpc.Status (rpcStatus), not application/problem+json
+  - id: model-context-protocol
+    conforms: true
+    evidence: hosted MCP server at api.rilldata.com/.../runtime/mcp
+  - id: semver
+    conforms: true
+    evidence: product releases tagged semver on GitHub Releases
+  - id: soc2
+    conforms: true
+    evidence: SOC 2 published on trust.rilldata.com
+compliance:
+  programs: [SOC 2]
+  trust_center: https://trust.rilldata.com/
+  detail: security/rill-data-trust-center.yml

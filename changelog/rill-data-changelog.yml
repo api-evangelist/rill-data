@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/rilldata/rill/releases
+scheme: semver
+current_version: v0.88.1
+changelog_url: https://github.com/rilldata/rill/releases
+notes: >-
+  Rill publishes its dated release history on GitHub Releases (322+ releases as
+  of July 2026), tagged semver. Release notes are auto-generated per tag. The
+  recent window below is captured from the releases feed; the live feed is the
+  source of truth.
+entries:
+  - version: v0.88.1
+    date: '2026-07-17'
+    type: patch
+  - version: v0.88.0
+    date: '2026-07-16'
+    type: minor
+  - version: v0.87.8
+    date: '2026-07-03'
+    type: patch
+  - version: v0.87.7
+    date: '2026-06-26'
+    type: patch
+  - version: v0.87.6
+    date: '2026-06-25'
+    type: patch
+  - version: v0.87.5
+    date: '2026-06-25'
+    type: patch
+  - version: v0.87.4
+    date: '2026-06-22'
+    type: patch
+  - version: v0.87.3
+    date: '2026-06-22'
+    type: patch

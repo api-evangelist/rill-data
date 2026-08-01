@@ -1,0 +1,14 @@
+{
+  "provider": "rill-data",
+  "sources": [
+    "rill-data-orgs-api-openapi.yml"
+  ],
+  "outputs": [
+    "rill-data-orgs-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

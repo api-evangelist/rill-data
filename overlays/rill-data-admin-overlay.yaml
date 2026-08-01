@@ -1,0 +1,37 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Rill Admin API
+  version: 1.0.0
+extends: openapi/rill-data-admin-openapi.yaml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: rill-data
+      x-apievangelist-rating: null
+      x-api-transport: [https-json, grpc, connect]
+      x-error-model: grpc-status
+      x-authentication: authentication/rill-data-authentication.yml
+      x-conventions: conventions/rill-data-conventions.yml
+  - target: $.servers
+    update:
+      - url: https://api.rilldata.com
+        description: Rill Cloud admin API (production)
+  - target: $.components.securitySchemes
+    update:
+      bearerToken:
+        type: http
+        scheme: bearer
+        description: >-
+          Rill user (personal access) token or service token, sent as
+          `Authorization: Bearer <token>`. Issue with `rill token issue`.
+      oauth2:
+        type: oauth2
+        description: >-
+          OAuth 2.1 authorization-code + PKCE (used by MCP connectors); metadata
+          at /.well-known/oauth-authorization-server.
+        flows:
+          authorizationCode:
+            authorizationUrl: https://admin.rilldata.com/auth/oauth/authorize
+            tokenUrl: https://admin.rilldata.com/auth/oauth/token
+            scopes:
+              offline_access: Issue a refresh token for long-lived access.

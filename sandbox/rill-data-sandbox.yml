@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://ui.rilldata.com/demo
+notes: >-
+  Rill does not publish payment-style test credentials. Its public "try it"
+  surface is a set of hosted public demo projects on Rill Cloud that can be
+  queried without authentication (including via the MCP server), plus the free
+  local Rill Developer app for fully local pipelines. These are the real,
+  published sandbox values.
+demo:
+  url: https://ui.rilldata.com/demo
+  public_projects:
+    - org: demo
+      project: rill-github-analytics
+      mcp_url: https://api.rilldata.com/v1/organizations/demo/projects/rill-github-analytics/runtime/mcp
+      auth: none (public project — no token required)
+local_developer:
+  install: curl https://rill.sh | sh
+  start: rill start
+  description: >-
+    Fully local, free Rill Developer environment — connect sources, model with
+    SQL/YAML, and build dashboards on your machine before deploying to Cloud.
