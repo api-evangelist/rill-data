@@ -77,6 +77,8 @@ apis:
   - type: DataModel
     url: data-model/rill-data-data-model.yml
 common:
+- type: Overlay
+  url: overlays/rill-data-admin-overlay.yaml
 - type: Website
   url: https://www.rilldata.com
 - type: DeveloperPortal
