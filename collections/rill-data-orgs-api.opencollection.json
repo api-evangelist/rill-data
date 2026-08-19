@@ -1,0 +1,991 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rill Admin Orgs API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orgs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListOrganizations lists all the organizations currently managed by the admin",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs",
+            "params": [
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "ListOrganizations lists all the organizations currently managed by the admin"
+        },
+        {
+          "info": {
+            "name": "CreateOrganization creates a new organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/orgs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "CreateOrganization creates a new organization"
+        },
+        {
+          "info": {
+            "name": "GetOrganization returns information about a specific organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "superuserForceAccess",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "GetOrganization returns information about a specific organization"
+        },
+        {
+          "info": {
+            "name": "UpdateOrganization updates an organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/v1/orgs/:org",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "UpdateOrganization updates an organization"
+        },
+        {
+          "info": {
+            "name": "DeleteOrganization deletes an organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/orgs/:org",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteOrganization deletes an organization"
+        },
+        {
+          "info": {
+            "name": "ListOrganizationInvites lists all the org invites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/invites",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "ListOrganizationInvites lists all the org invites"
+        },
+        {
+          "info": {
+            "name": "ListOrganizationMemberUsers lists all the org members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/members",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "query",
+                "description": "Optionally filter by role"
+              },
+              {
+                "name": "includeCounts",
+                "value": "",
+                "type": "query",
+                "description": "Optionally include counts"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "superuserForceAccess",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchPattern",
+                "value": "",
+                "type": "query",
+                "description": "Optional search pattern to filter users by email or display name"
+              }
+            ]
+          },
+          "docs": "ListOrganizationMemberUsers lists all the org members"
+        },
+        {
+          "info": {
+            "name": "AddOrganizationMemberUser adds a user to the organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/orgs/:org/members",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "AddOrganizationMemberUser adds a user to the organization"
+        },
+        {
+          "info": {
+            "name": "RemoveOrganizationMemberUser removes member from the organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/orgs/:org/members/:email",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "RemoveOrganizationMemberUser removes member from the organization"
+        },
+        {
+          "info": {
+            "name": "ListProjectsForOrganization lists all the projects currently available for a given organization.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "ListProjectsForOrganization lists all the projects currently available for a given organization."
+        },
+        {
+          "info": {
+            "name": "CreateProject creates a new project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "CreateProject creates a new project"
+        },
+        {
+          "info": {
+            "name": "GetProject returns information about a specific project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "branch",
+                "value": "",
+                "type": "query",
+                "description": "Optional branch to get deployment for. If not set, then project's primary_branch is used."
+              },
+              {
+                "name": "accessTokenTtlSeconds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "superuserForceAccess",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "issueSuperuserToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "GetProject returns information about a specific project"
+        },
+        {
+          "info": {
+            "name": "UpdateProject updates a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "UpdateProject updates a project"
+        },
+        {
+          "info": {
+            "name": "DeleteProject deletes a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteProject deletes a project"
+        },
+        {
+          "info": {
+            "name": "ListProjectInvites lists all the project invites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project/invites",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "ListProjectInvites lists all the project invites"
+        },
+        {
+          "info": {
+            "name": "ListProjectMemberUsers lists all the project members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project/members",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "query",
+                "description": "Optionally filter by role"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "superuserForceAccess",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "ListProjectMemberUsers lists all the project members"
+        },
+        {
+          "info": {
+            "name": "AddProjectMemberUser adds a member to the project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project/members",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "AddProjectMemberUser adds a member to the project"
+        },
+        {
+          "info": {
+            "name": "GetProjectMemberUser gets the member details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project/members/:email",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetProjectMemberUser gets the member details"
+        },
+        {
+          "info": {
+            "name": "SetProjectMemberUserRole sets the role for the member",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project/members/:email",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "SetProjectMemberUserRole sets the role for the member"
+        },
+        {
+          "info": {
+            "name": "RemoveProjectMemberUser removes member from the project",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project/members/:email",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "RemoveProjectMemberUser removes member from the project"
+        },
+        {
+          "info": {
+            "name": "ListProjectMemberUsergroups lists the user groups assigned to a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project/usergroups",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "query",
+                "description": "Optionally filter by role"
+              },
+              {
+                "name": "includeCounts",
+                "value": "",
+                "type": "query",
+                "description": "Optionally include counts"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "ListProjectMemberUsergroups lists the user groups assigned to a project"
+        },
+        {
+          "info": {
+            "name": "AddProjectMemberUsergroup adds a user group to the project with a role",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project/usergroups/:usergroup/roles",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "usergroup",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "AddProjectMemberUsergroup adds a user group to the project with a role"
+        },
+        {
+          "info": {
+            "name": "SetProjectMemberUsergroupRole sets the role for the user group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project/usergroups/:usergroup/roles",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "usergroup",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "SetProjectMemberUsergroupRole sets the role for the user group"
+        },
+        {
+          "info": {
+            "name": "RemoveProjectMemberUsergroup revokes the project-level role for the user group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project/usergroups/:usergroup/roles",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "usergroup",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "RemoveProjectMemberUsergroup revokes the project-level role for the user group"
+        },
+        {
+          "info": {
+            "name": "GetProjectVariables returns project variables.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/projects/:project/variables",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path",
+                "description": "Org the project belongs to."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "path",
+                "description": "Project to get variables for."
+              },
+              {
+                "name": "environment",
+                "value": "",
+                "type": "query",
+                "description": "Environment to get the variables for.\nIf empty, only variables shared across all environments are returned."
+              },
+              {
+                "name": "forAllEnvironments",
+                "value": "",
+                "type": "query",
+                "description": "If true, return variable values for all environments.\nCan't be used together with the \"environment\" option."
+              }
+            ]
+          },
+          "docs": "GetProjectVariables returns project variables."
+        },
+        {
+          "info": {
+            "name": "ListOrganizationMemberUsergroups lists the organization's user groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/usergroups",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "query",
+                "description": "Optionally filter by role"
+              },
+              {
+                "name": "includeCounts",
+                "value": "",
+                "type": "query",
+                "description": "Optionally include counts"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "ListOrganizationMemberUsergroups lists the organization's user groups"
+        },
+        {
+          "info": {
+            "name": "CreateUsergroup creates a user group in the organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/orgs/:org/usergroups",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "CreateUsergroup creates a user group in the organization"
+        },
+        {
+          "info": {
+            "name": "GetUsergroup returns the user group details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/usergroups/:usergroup",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "usergroup",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "GetUsergroup returns the user group details"
+        },
+        {
+          "info": {
+            "name": "UpdateUsergroup updates a user group's name and/or description",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/v1/orgs/:org/usergroups/:usergroup",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "usergroup",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "UpdateUsergroup updates a user group's name and/or description"
+        },
+        {
+          "info": {
+            "name": "DeleteUsergroup deletes the user group from the organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/orgs/:org/usergroups/:usergroup",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "usergroup",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteUsergroup deletes the user group from the organization"
+        },
+        {
+          "info": {
+            "name": "ListUsergroupMemberUsers lists all the user group members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orgs/:org/usergroups/:usergroup/members",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "usergroup",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "ListUsergroupMemberUsers lists all the user group members"
+        },
+        {
+          "info": {
+            "name": "AddUsergroupMemberUser adds a member to the user group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/v1/orgs/:org/usergroups/:usergroup/members/:email",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "usergroup",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "AddUsergroupMemberUser adds a member to the user group"
+        },
+        {
+          "info": {
+            "name": "RemoveUsergroupMemberUser removes member from the user group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/orgs/:org/usergroups/:usergroup/members/:email",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "usergroup",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "RemoveUsergroupMemberUser removes member from the user group"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

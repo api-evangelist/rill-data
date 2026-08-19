@@ -12,38 +12,43 @@ server:
     flow: authorization_code
     pkce: true
     authorization_server: https://admin.rilldata.com
-    scopes: [offline_access]
+    scopes:
+    - offline_access
     dynamic_client_registration: true
     alt_manual_token: Bearer <Rill personal access token or service token>
   clients:
-    - Claude Desktop (custom connector)
-    - Claude Code (claude mcp add --transport http)
-    - ChatGPT (developer mode connector)
-    - Cursor
-    - Windsurf
-    - "npx mcp-remote (manual config)"
-description: >-
-  Official hosted Rill Model Context Protocol server. Exposes Rill's governed
-  metrics views and project files to LLMs so analysts can query predefined
-  measures and dimensions through natural language. Also available as built-in
-  AI Chat inside Rill Cloud. Consumes metrics views; it does not create them.
+  - Claude Desktop (custom connector)
+  - Claude Code (claude mcp add --transport http)
+  - ChatGPT (developer mode connector)
+  - Cursor
+  - Windsurf
+  - npx mcp-remote (manual config)
+description: Official hosted Rill Model Context Protocol server. Exposes Rill's governed metrics views
+  and project files to LLMs so analysts can query predefined measures and dimensions through natural language.
+  Also available as built-in AI Chat inside Rill Cloud. Consumes metrics views; it does not create them.
 tools:
-  - name: list_metrics_views
-    description: Discover the metrics views available in the project.
-  - name: get_metrics_view
-    description: Fetch a metrics view's specification (its dimensions and measures).
-  - name: query_metrics_view_summary
-    description: Get the available time range and sample values/types per dimension.
-  - name: query_metrics_view
-    description: Run an aggregated query against a metrics view.
-  - name: list_files
-    description: Browse the files in the Rill project.
-  - name: search_files
-    description: Find project files by name or content.
-  - name: read_file
-    description: Read the contents of a project file.
-  - name: write_file
-    description: Create, update, or delete a project file (returns reconcile status).
-notes: >-
-  Tool names verified in the Rill source (runtime/ai/mcp.go). The server honors
-  per-project and per-metrics-view ai_instructions to steer responses.
+- name: list_metrics_views
+  description: Discover the metrics views available in the project.
+- name: get_metrics_view
+  description: Fetch a metrics view's specification (its dimensions and measures).
+- name: query_metrics_view_summary
+  description: Get the available time range and sample values/types per dimension.
+- name: query_metrics_view
+  description: Run an aggregated query against a metrics view.
+- name: list_files
+  description: Browse the files in the Rill project.
+- name: search_files
+  description: Find project files by name or content.
+- name: read_file
+  description: Read the contents of a project file.
+- name: write_file
+  description: Create, update, or delete a project file (returns reconcile status).
+notes: Tool names verified in the Rill source (runtime/ai/mcp.go). The server honors per-project and per-metrics-view
+  ai_instructions to steer responses.
+deployment:
+  mode: remote
+  endpoint: https://api.rilldata.com/v1/orgs/{org_name}/projects/{project_name}/runtime/mcp
+  verified: probed
+  probe: http-400
+  checked: '2026-08-12'
+  source: catalog MCP census
