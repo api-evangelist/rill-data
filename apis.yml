@@ -44,6 +44,16 @@ tags:
 - Metrics
 - Data
 - OLAP
+- Open-Source
+- Developer Tools
+tags_raw:
+- Company
+- Analytics
+- Business Intelligence
+- Dashboards
+- Metrics
+- Data
+- OLAP
 - Open Source
 - Developer Tools
 maintainers:
@@ -58,6 +68,8 @@ apis:
   humanURL: https://docs.rilldata.com
   baseURL: https://api.rilldata.com
   tags:
+  - Organization
+  tags_raw:
   - Orgs
   properties:
   - type: OpenAPI
