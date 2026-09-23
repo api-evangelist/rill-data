@@ -1,0 +1,31 @@
+# Front Door AI Index — rill-data — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: rill-data
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.rilldata.com
+  final_host: www.rilldata.com
+  ownership: own
+  owner: rill-data
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 15
+  host_score: 15
+  density: 14.34
+  words: 1046
+  tiers:
+    agentic: 8
+    core: 4
+    model: 3
+  ambiguous: 9
+  top_terms:
+    agentic: 6
+    intelligence: 5
+    AI: 4
+    agent: 4
+    Claude: 3
+    AI agent: 1
+    MCP: 1

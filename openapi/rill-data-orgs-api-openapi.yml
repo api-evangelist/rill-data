@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   description: Rill Admin API enables programmatic management of Rill Cloud resources, including organizations, projects, and user access. It provides endpoints for creating, updating, and deleting these resources, as well as managing authentication and permissions.
   title: Rill Admin Orgs API
@@ -358,7 +358,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: ListProjectsForOrganization lists all the projects currently available for a given organization.
+      summary: ListProjectsForOrganization lists all the projects currently available for a…
       x-visibility: public
       tags:
       - Orgs
@@ -1076,7 +1076,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: GetProjectVariables returns project variables.
+      summary: GetProjectVariables returns project variables
       x-visibility: public
       tags:
       - Orgs
@@ -1392,72 +1392,38 @@ paths:
       - Orgs
 components:
   schemas:
-    v1DeploymentStatus:
-      default: DEPLOYMENT_STATUS_UNSPECIFIED
-      enum:
-      - DEPLOYMENT_STATUS_UNSPECIFIED
-      - DEPLOYMENT_STATUS_PENDING
-      - DEPLOYMENT_STATUS_RUNNING
-      - DEPLOYMENT_STATUS_ERRORED
-      - DEPLOYMENT_STATUS_STOPPED
-      - DEPLOYMENT_STATUS_UPDATING
-      - DEPLOYMENT_STATUS_STOPPING
-      - DEPLOYMENT_STATUS_DELETING
-      - DEPLOYMENT_STATUS_DELETED
-      type: string
+    v1CreateOrganizationResponse:
+      properties:
+        organization:
+          $ref: '#/components/schemas/v1Organization'
+      type: object
+    v1ListUsergroupMemberUsersResponse:
+      properties:
+        members:
+          items:
+            $ref: '#/components/schemas/v1UsergroupMemberUser'
+          type: array
+        nextPageToken:
+          type: string
+      type: object
+    v1OrganizationInvite:
+      properties:
+        email:
+          type: string
+        invitedBy:
+          type: string
+        roleName:
+          type: string
+      type: object
     v1AddOrganizationMemberUserResponse:
       properties:
         pendingSignup:
           type: boolean
       type: object
-    v1ListProjectMemberUsergroupsResponse:
+    v1UpdateOrganizationResponse:
       properties:
-        members:
-          items:
-            $ref: '#/components/schemas/v1MemberUsergroup'
-          type: array
-        nextPageToken:
-          type: string
-      type: object
-    v1ListProjectMemberUsersResponse:
-      properties:
-        members:
-          items:
-            $ref: '#/components/schemas/v1ProjectMemberUser'
-          type: array
-        nextPageToken:
-          type: string
-      type: object
-    v1ListOrganizationInvitesResponse:
-      properties:
-        invites:
-          items:
-            $ref: '#/components/schemas/v1OrganizationInvite'
-          type: array
-        nextPageToken:
-          type: string
-        totalCount:
-          format: int64
-          title: Total number of invites in the organization
-          type: integer
-      type: object
-    v1GetProjectResponse:
-      properties:
-        deployment:
-          $ref: '#/components/schemas/v1Deployment'
-        jwt:
-          type: string
-        project:
-          $ref: '#/components/schemas/v1Project'
-        projectPermissions:
-          $ref: '#/components/schemas/v1ProjectPermissions'
-      type: object
-    v1CreateUsergroupResponse:
-      properties:
-        usergroup:
-          $ref: '#/components/schemas/v1Usergroup'
-      type: object
-    v1RemoveUsergroupMemberUserResponse:
+        organization:
+          $ref: '#/components/schemas/v1Organization'
       type: object
     v1ListOrganizationMemberUsersResponse:
       properties:
@@ -1472,12 +1438,57 @@ components:
           title: Total number of members in the organization
           type: integer
       type: object
-    v1UpdateOrganizationResponse:
+    v1ResourceName:
       properties:
-        organization:
-          $ref: '#/components/schemas/v1Organization'
+        name:
+          type: string
+        type:
+          type: string
       type: object
-    v1SetProjectMemberUsergroupRoleResponse:
+    v1ListProjectsForOrganizationResponse:
+      properties:
+        nextPageToken:
+          type: string
+        projects:
+          items:
+            $ref: '#/components/schemas/v1Project'
+          type: array
+      type: object
+    v1AddProjectMemberUsergroupResponse:
+      type: object
+    v1ProjectVariable:
+      properties:
+        createdOn:
+          description: Timestamp when the variable was created.
+          format: date-time
+          type: string
+        environment:
+          description: 'Environment the variable is set for.
+
+            If empty, the variable is shared for all environments.'
+          type: string
+        id:
+          description: Internal ID.
+          type: string
+        name:
+          description: Variable name (case insensitive).
+          type: string
+        updatedByUserId:
+          description: User ID that most recently updated the variable. May be empty.
+          type: string
+        updatedOn:
+          description: Timestamp when the variable was last updated.
+          format: date-time
+          type: string
+        value:
+          description: Variable value.
+          type: string
+      type: object
+    v1AddUsergroupMemberUserResponse:
+      type: object
+    v1RemoveProjectMemberUserResponse:
+      type: object
+    v1SetProjectMemberUserRoleResponse:
       type: object
     v1UsergroupMemberUser:
       properties:
@@ -1496,135 +1507,7 @@ components:
         userPhotoUrl:
           type: string
       type: object
-    v1AddProjectMemberUsergroupResponse:
-      type: object
-    v1ListUsergroupMemberUsersResponse:
-      properties:
-        members:
-          items:
-            $ref: '#/components/schemas/v1UsergroupMemberUser'
-          type: array
-        nextPageToken:
-          type: string
-      type: object
-    v1GetProjectVariablesResponse:
-      properties:
-        variables:
-          items:
-            $ref: '#/components/schemas/v1ProjectVariable'
-          type: array
-        variablesMap:
-          additionalProperties:
-            type: string
-          description: 'Deprecated: Populated for backwards compatibility.
-
-            (Renamed from "variables" to "variables_map").'
-          type: object
-      type: object
-    v1OrganizationMemberUser:
-      properties:
-        attributes:
-          type: object
-        createdOn:
-          format: date-time
-          type: string
-        projectsCount:
-          format: int64
-          type: integer
-        roleName:
-          type: string
-        updatedOn:
-          format: date-time
-          type: string
-        userEmail:
-          type: string
-        userId:
-          type: string
-        userName:
-          type: string
-        userPhotoUrl:
-          type: string
-        usergroupsCount:
-          format: int64
-          type: integer
-      type: object
-    v1DeleteOrganizationResponse:
-      type: object
-    v1OrganizationInvite:
-      properties:
-        email:
-          type: string
-        invitedBy:
-          type: string
-        roleName:
-          type: string
-      type: object
-    v1CreateOrganizationRequest:
-      properties:
-        description:
-          type: string
-        displayName:
-          type: string
-        name:
-          type: string
-      type: object
-    v1ProjectMemberUser:
-      properties:
-        createdOn:
-          format: date-time
-          type: string
-        orgRoleName:
-          type: string
-        resources:
-          items:
-            $ref: '#/components/schemas/v1ResourceName'
-          type: array
-        restrictResources:
-          type: boolean
-        roleName:
-          type: string
-        updatedOn:
-          format: date-time
-          type: string
-        userEmail:
-          type: string
-        userId:
-          type: string
-        userName:
-          type: string
-        userPhotoUrl:
-          type: string
-      type: object
-    v1CreateProjectResponse:
-      properties:
-        project:
-          $ref: '#/components/schemas/v1Project'
-      type: object
-    v1SetProjectMemberUserRoleResponse:
-      type: object
-    v1ResourceName:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-      type: object
-    v1ProjectInvite:
-      properties:
-        email:
-          type: string
-        invitedBy:
-          type: string
-        orgRoleName:
-          type: string
-        resources:
-          items:
-            $ref: '#/components/schemas/v1ResourceName'
-          type: array
-        restrictResources:
-          type: boolean
-        roleName:
-          type: string
+    v1RemoveProjectMemberUsergroupResponse:
       type: object
     v1Organization:
       properties:
@@ -1668,7 +1551,82 @@ components:
           format: date-time
           type: string
       type: object
-    v1AddUsergroupMemberUserResponse:
+    v1ListProjectInvitesResponse:
+      properties:
+        invites:
+          items:
+            $ref: '#/components/schemas/v1ProjectInvite'
+          type: array
+        nextPageToken:
+          type: string
+      type: object
+    v1AddProjectMemberUserResponse:
+      properties:
+        pendingSignup:
+          type: boolean
+      type: object
+    v1DeploymentStatus:
+      default: DEPLOYMENT_STATUS_UNSPECIFIED
+      enum:
+      - DEPLOYMENT_STATUS_UNSPECIFIED
+      - DEPLOYMENT_STATUS_PENDING
+      - DEPLOYMENT_STATUS_RUNNING
+      - DEPLOYMENT_STATUS_ERRORED
+      - DEPLOYMENT_STATUS_STOPPED
+      - DEPLOYMENT_STATUS_UPDATING
+      - DEPLOYMENT_STATUS_STOPPING
+      - DEPLOYMENT_STATUS_DELETING
+      - DEPLOYMENT_STATUS_DELETED
+      type: string
+    protobufAny:
+      additionalProperties: {}
+      properties:
+        '@type':
+          type: string
+      type: object
+    v1ListProjectMemberUsergroupsResponse:
+      properties:
+        members:
+          items:
+            $ref: '#/components/schemas/v1MemberUsergroup'
+          type: array
+        nextPageToken:
+          type: string
+      type: object
+    v1ListOrganizationsResponse:
+      properties:
+        nextPageToken:
+          type: string
+        organizations:
+          items:
+            $ref: '#/components/schemas/v1Organization'
+          type: array
+      type: object
+    v1ListProjectMemberUsersResponse:
+      properties:
+        members:
+          items:
+            $ref: '#/components/schemas/v1ProjectMemberUser'
+          type: array
+        nextPageToken:
+          type: string
+      type: object
+    v1Usergroup:
+      properties:
+        createdOn:
+          format: date-time
+          type: string
+        groupDescription:
+          type: string
+        groupId:
+          type: string
+        groupName:
+          type: string
+        managed:
+          type: boolean
+        updatedOn:
+          format: date-time
+          type: string
       type: object
     rpcStatus:
       properties:
@@ -1682,6 +1640,89 @@ components:
         message:
           type: string
       type: object
+    v1RemoveUsergroupMemberUserResponse:
+      type: object
+    v1DeleteUsergroupResponse:
+      type: object
+    v1ProjectPermissions:
+      properties:
+        admin:
+          type: boolean
+        createAlerts:
+          type: boolean
+        createBookmarks:
+          type: boolean
+        createMagicAuthTokens:
+          type: boolean
+        createReports:
+          type: boolean
+        manageAlerts:
+          type: boolean
+        manageBookmarks:
+          type: boolean
+        manageDev:
+          type: boolean
+        manageMagicAuthTokens:
+          type: boolean
+        manageProd:
+          type: boolean
+        manageProject:
+          type: boolean
+        manageProjectAdmins:
+          type: boolean
+        manageProjectMembers:
+          type: boolean
+        manageProvisionerResources:
+          type: boolean
+        manageReports:
+          type: boolean
+        readDev:
+          type: boolean
+        readDevStatus:
+          type: boolean
+        readProd:
+          type: boolean
+        readProdStatus:
+          type: boolean
+        readProject:
+          type: boolean
+        readProjectMembers:
+          type: boolean
+        readProvisionerResources:
+          type: boolean
+      type: object
+    v1GetProjectVariablesResponse:
+      properties:
+        variables:
+          items:
+            $ref: '#/components/schemas/v1ProjectVariable'
+          type: array
+        variablesMap:
+          additionalProperties:
+            type: string
+          description: 'Deprecated: Populated for backwards compatibility.
+
+            (Renamed from "variables" to "variables_map").'
+          type: object
+      type: object
+    v1UpdateProjectResponse:
+      properties:
+        project:
+          $ref: '#/components/schemas/v1Project'
+      type: object
+    v1ListOrganizationInvitesResponse:
+      properties:
+        invites:
+          items:
+            $ref: '#/components/schemas/v1OrganizationInvite'
+          type: array
+        nextPageToken:
+          type: string
+        totalCount:
+          format: int64
+          title: Total number of invites in the organization
+          type: integer
+      type: object
     v1GetUsergroupResponse:
       properties:
         nextPageToken:
@@ -1689,49 +1730,7 @@ components:
         usergroup:
           $ref: '#/components/schemas/v1Usergroup'
       type: object
-    v1ProjectVariable:
-      properties:
-        createdOn:
-          description: Timestamp when the variable was created.
-          format: date-time
-          type: string
-        environment:
-          description: 'Environment the variable is set for.
-
-            If empty, the variable is shared for all environments.'
-          type: string
-        id:
-          description: Internal ID.
-          type: string
-        name:
-          description: Variable name (case insensitive).
-          type: string
-        updatedByUserId:
-          description: User ID that most recently updated the variable. May be empty.
-          type: string
-        updatedOn:
-          description: Timestamp when the variable was last updated.
-          format: date-time
-          type: string
-        value:
-          description: Variable value.
-          type: string
-      type: object
-    v1UpdateProjectResponse:
-      properties:
-        project:
-          $ref: '#/components/schemas/v1Project'
-      type: object
-    v1ListProjectsForOrganizationResponse:
-      properties:
-        nextPageToken:
-          type: string
-        projects:
-          items:
-            $ref: '#/components/schemas/v1Project'
-          type: array
-      type: object
-    v1RemoveProjectMemberUserResponse:
+    v1RemoveOrganizationMemberUserResponse:
       type: object
     v1ListOrganizationMemberUsergroupsResponse:
       properties:
@@ -1742,12 +1741,102 @@ components:
         nextPageToken:
           type: string
       type: object
-    v1RemoveOrganizationMemberUserResponse:
-      type: object
-    v1CreateOrganizationResponse:
+    v1OrganizationMemberUser:
       properties:
-        organization:
-          $ref: '#/components/schemas/v1Organization'
+        attributes:
+          type: object
+        createdOn:
+          format: date-time
+          type: string
+        projectsCount:
+          format: int64
+          type: integer
+        roleName:
+          type: string
+        updatedOn:
+          format: date-time
+          type: string
+        userEmail:
+          type: string
+        userId:
+          type: string
+        userName:
+          type: string
+        userPhotoUrl:
+          type: string
+        usergroupsCount:
+          format: int64
+          type: integer
+      type: object
+    v1SetProjectMemberUsergroupRoleResponse:
+      type: object
+    v1ProjectMemberUser:
+      properties:
+        createdOn:
+          format: date-time
+          type: string
+        orgRoleName:
+          type: string
+        resources:
+          items:
+            $ref: '#/components/schemas/v1ResourceName'
+          type: array
+        restrictResources:
+          type: boolean
+        roleName:
+          type: string
+        updatedOn:
+          format: date-time
+          type: string
+        userEmail:
+          type: string
+        userId:
+          type: string
+        userName:
+          type: string
+        userPhotoUrl:
+          type: string
+      type: object
+    v1CreateUsergroupResponse:
+      properties:
+        usergroup:
+          $ref: '#/components/schemas/v1Usergroup'
+      type: object
+    v1GetProjectMemberUserResponse:
+      properties:
+        member:
+          $ref: '#/components/schemas/v1ProjectMemberUser'
+      type: object
+    v1CreateOrganizationRequest:
+      properties:
+        description:
+          type: string
+        displayName:
+          type: string
+        name:
+          type: string
+      type: object
+    v1ProjectInvite:
+      properties:
+        email:
+          type: string
+        invitedBy:
+          type: string
+        orgRoleName:
+          type: string
+        resources:
+          items:
+            $ref: '#/components/schemas/v1ResourceName'
+          type: array
+        restrictResources:
+          type: boolean
+        roleName:
+          type: string
+      type: object
+    v1DeleteProjectResponse:
+      properties:
+        id:
+          type: string
       type: object
     v1GetOrganizationResponse:
       properties:
@@ -1756,36 +1845,28 @@ components:
         permissions:
           $ref: '#/components/schemas/v1OrganizationPermissions'
       type: object
-    v1DeleteProjectResponse:
+    v1OrganizationPermissions:
       properties:
-        id:
-          type: string
-      type: object
-    v1DeleteUsergroupResponse:
-      type: object
-    v1OrganizationQuotas:
-      properties:
-        deployments:
-          format: int32
-          type: integer
-        outstandingInvites:
-          format: int32
-          type: integer
-        projects:
-          format: int32
-          type: integer
-        seats:
-          format: int32
-          type: integer
-        slotsPerDeployment:
-          format: int32
-          type: integer
-        slotsTotal:
-          format: int32
-          type: integer
-        storageLimitBytesPerDeployment:
-          format: int64
-          type: string
+        admin:
+          type: boolean
+        createProjects:
+          type: boolean
+        guest:
+          type: boolean
+        manageOrg:
+          type: boolean
+        manageOrgAdmins:
+          type: boolean
+        manageOrgMembers:
+          type: boolean
+        manageProjects:
+          type: boolean
+        readOrg:
+          type: boolean
+        readOrgMembers:
+          type: boolean
+        readProjects:
+          type: boolean
       type: object
     v1Project:
       properties:
@@ -1852,158 +1933,28 @@ components:
           format: date-time
           type: string
       type: object
-    v1ListOrganizationsResponse:
+    v1OrganizationQuotas:
       properties:
-        nextPageToken:
-          type: string
-        organizations:
-          items:
-            $ref: '#/components/schemas/v1Organization'
-          type: array
-      type: object
-    v1ProjectPermissions:
-      properties:
-        admin:
-          type: boolean
-        createAlerts:
-          type: boolean
-        createBookmarks:
-          type: boolean
-        createMagicAuthTokens:
-          type: boolean
-        createReports:
-          type: boolean
-        manageAlerts:
-          type: boolean
-        manageBookmarks:
-          type: boolean
-        manageDev:
-          type: boolean
-        manageMagicAuthTokens:
-          type: boolean
-        manageProd:
-          type: boolean
-        manageProject:
-          type: boolean
-        manageProjectAdmins:
-          type: boolean
-        manageProjectMembers:
-          type: boolean
-        manageProvisionerResources:
-          type: boolean
-        manageReports:
-          type: boolean
-        readDev:
-          type: boolean
-        readDevStatus:
-          type: boolean
-        readProd:
-          type: boolean
-        readProdStatus:
-          type: boolean
-        readProject:
-          type: boolean
-        readProjectMembers:
-          type: boolean
-        readProvisionerResources:
-          type: boolean
-      type: object
-    v1ListProjectInvitesResponse:
-      properties:
-        invites:
-          items:
-            $ref: '#/components/schemas/v1ProjectInvite'
-          type: array
-        nextPageToken:
-          type: string
-      type: object
-    v1AddProjectMemberUserResponse:
-      properties:
-        pendingSignup:
-          type: boolean
-      type: object
-    v1RemoveProjectMemberUsergroupResponse:
-      type: object
-    v1GetProjectMemberUserResponse:
-      properties:
-        member:
-          $ref: '#/components/schemas/v1ProjectMemberUser'
-      type: object
-    v1Usergroup:
-      properties:
-        createdOn:
-          format: date-time
-          type: string
-        groupDescription:
-          type: string
-        groupId:
-          type: string
-        groupName:
-          type: string
-        managed:
-          type: boolean
-        updatedOn:
-          format: date-time
-          type: string
-      type: object
-    v1UpdateUsergroupResponse:
-      properties:
-        usergroup:
-          $ref: '#/components/schemas/v1Usergroup'
-      type: object
-    v1OrganizationPermissions:
-      properties:
-        admin:
-          type: boolean
-        createProjects:
-          type: boolean
-        guest:
-          type: boolean
-        manageOrg:
-          type: boolean
-        manageOrgAdmins:
-          type: boolean
-        manageOrgMembers:
-          type: boolean
-        manageProjects:
-          type: boolean
-        readOrg:
-          type: boolean
-        readOrgMembers:
-          type: boolean
-        readProjects:
-          type: boolean
-      type: object
-    v1MemberUsergroup:
-      properties:
-        createdOn:
-          format: date-time
-          type: string
-        groupId:
-          type: string
-        groupManaged:
-          type: boolean
-        groupName:
-          type: string
-        resources:
-          items:
-            $ref: '#/components/schemas/v1ResourceName'
-          type: array
-        restrictResources:
-          type: boolean
-        roleName:
-          type: string
-        updatedOn:
-          format: date-time
-          type: string
-        usersCount:
-          format: int64
+        deployments:
+          format: int32
           type: integer
-      type: object
-    protobufAny:
-      additionalProperties: {}
-      properties:
-        '@type':
+        outstandingInvites:
+          format: int32
+          type: integer
+        projects:
+          format: int32
+          type: integer
+        seats:
+          format: int32
+          type: integer
+        slotsPerDeployment:
+          format: int32
+          type: integer
+        slotsTotal:
+          format: int32
+          type: integer
+        storageLimitBytesPerDeployment:
+          format: int64
           type: string
       type: object
     v1Deployment:
@@ -2037,6 +1988,55 @@ components:
         usedOn:
           format: date-time
           type: string
+      type: object
+    v1MemberUsergroup:
+      properties:
+        createdOn:
+          format: date-time
+          type: string
+        groupId:
+          type: string
+        groupManaged:
+          type: boolean
+        groupName:
+          type: string
+        resources:
+          items:
+            $ref: '#/components/schemas/v1ResourceName'
+          type: array
+        restrictResources:
+          type: boolean
+        roleName:
+          type: string
+        updatedOn:
+          format: date-time
+          type: string
+        usersCount:
+          format: int64
+          type: integer
+      type: object
+    v1GetProjectResponse:
+      properties:
+        deployment:
+          $ref: '#/components/schemas/v1Deployment'
+        jwt:
+          type: string
+        project:
+          $ref: '#/components/schemas/v1Project'
+        projectPermissions:
+          $ref: '#/components/schemas/v1ProjectPermissions'
+      type: object
+    v1DeleteOrganizationResponse:
+      type: object
+    v1UpdateUsergroupResponse:
+      properties:
+        usergroup:
+          $ref: '#/components/schemas/v1Usergroup'
+      type: object
+    v1CreateProjectResponse:
+      properties:
+        project:
+          $ref: '#/components/schemas/v1Project'
       type: object
 externalDocs:
   description: Rill API Documentation

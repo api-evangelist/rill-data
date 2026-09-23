@@ -1,7 +1,7 @@
 {
   "provider": "rill-data",
   "sources": [
-    "rill-data-orgs-api-openapi.yml"
+    "_original/rill-data-admin-openapi.yaml"
   ],
   "outputs": [
     "rill-data-orgs-api-openapi.yml"
@@ -9,6 +9,46 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "rill-data-admin-openapi.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths POST /v1/orgs -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths DELETE /v1/orgs/{org} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths PATCH /v1/orgs/{org} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/invites -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/members -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths POST /v1/orgs/{org}/members -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths DELETE /v1/orgs/{org}/members/{email} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/projects -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths POST /v1/orgs/{org}/projects -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths DELETE /v1/orgs/{org}/projects/{project} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/projects/{project} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths PATCH /v1/orgs/{org}/projects/{project} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/projects/{project}/invites -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/projects/{project}/members -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths POST /v1/orgs/{org}/projects/{project}/members -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths DELETE /v1/orgs/{org}/projects/{project}/members/{email} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/projects/{project}/members/{email} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths PUT /v1/orgs/{org}/projects/{project}/members/{email} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/projects/{project}/usergroups -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths DELETE /v1/orgs/{org}/projects/{project}/usergroups/{usergroup}/roles -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths POST /v1/orgs/{org}/projects/{project}/usergroups/{usergroup}/roles -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths PUT /v1/orgs/{org}/projects/{project}/usergroups/{usergroup}/roles -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/projects/{project}/variables -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/usergroups -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths POST /v1/orgs/{org}/usergroups -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths DELETE /v1/orgs/{org}/usergroups/{usergroup} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/usergroups/{usergroup} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths PATCH /v1/orgs/{org}/usergroups/{usergroup} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths GET /v1/orgs/{org}/usergroups/{usergroup}/members -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths DELETE /v1/orgs/{org}/usergroups/{usergroup}/members/{email} -> Orgs",
+    "rill-data-admin-openapi.yaml: tagged paths PUT /v1/orgs/{org}/usergroups/{usergroup}/members/{email} -> Orgs",
+    "rill-data-admin-openapi.yaml: declared missing tag: Orgs",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "rill-data-orgs-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
