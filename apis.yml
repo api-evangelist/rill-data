@@ -102,6 +102,9 @@ apis:
   - type: DataModel
     url: data-model/rill-data-data-model.yml
 common:
+- type: CapabilityMap
+  url: capabilities/rill-data-capability-edges.yml
+  name: Rill Data Business Capability Map
 - type: Overlay
   url: overlays/rill-data-admin-overlay.yaml
 - type: Website

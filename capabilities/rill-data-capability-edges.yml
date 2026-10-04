@@ -1,0 +1,26 @@
+slug: rill-data
+provider: Rill Data
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Orgs
+  spec_file: rill-data-orgs-api-openapi.yml
+  capability_id: BC-4230.10
+  capability_id_l1: BC-4230
+  capability_name: Tenant Provisioning & Lifecycle
+  confidence: 0.75
+  evidence: '''CreateOrganization creates a new organization'', ''AddOrganizationMemberUser adds a user
+    to the organization'', schema v1OrganizationQuotas'
+  reason: Rill Cloud admin API manages organizations (tenants), their projects, members, quotas and permissions
+    in a multi-tenant SaaS — tenant provisioning and lifecycle. Some overlap with user/access administration,
+    hence moderate confidence on the L2.
