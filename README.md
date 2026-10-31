@@ -64,6 +64,122 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Rill Data is a company surfaced as a portfolio company of bloomberg-beta, dcvc, sierra-ventures and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Rill Data builds Rill, an operational business-intelligence tool for fast, exploratory dashboards on large event and time-series data. Developers connect data sources, model last-mile transformations in SQL/YAML, define a governed metrics layer, and publish interactive dashboards — locally with the free Rill Developer app or hosted on Rill Cloud. Rill is open source (Go/TypeScript) and exposes a Protobuf-defined admin API over gRPC/Connect and JSON/HTTP at api.rilldata.com, a first-party CLI, embeddable dashboards, custom data APIs, and an official hosted Model Context Protocol (MCP) server that lets LLMs query its governed metrics views. Rill Data is a portfolio company of Bloomberg Beta, DCVC, and Sierra Ventures.
 
-Backed by: bloomberg-beta, dcvc, sierra-ventures — https://www.rilldata.com
+**Areas:** Company · Analytics · Business Intelligence · Dashboards · Metrics · Data · OLAP · Open Source · Developer Tools
+
+## Rill Data on APIs.io
+
+Everything profiled for Rill Data is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/rill-data/](https://apis.io/providers/rill-data/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Rill Data Orgs API](https://apis.io/apis/rill-data/rill-data-orgs-api/) — The Orgs API from Rill Data — 17 operation(s) for orgs.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [rill](https://apis.io/servers/rill-data/rill/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [Rill Admin Orgs API](https://apis.io/collections/rill-data/open-rill-data-orgs-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Rill Data Admin Overlay](https://apis.io/overlays/rill-data/rill-data-admin-overlay/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Rill Data Authentication](https://apis.io/security/rill-data/rill-data-authentication/)
+- [Rill Data Domain Security](https://apis.io/security/rill-data/rill-data-domain-security/)
+- [Rill Data Trust Center](https://apis.io/security/rill-data/rill-data-trust-center/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Rill Data Scopes](https://apis.io/scopes/rill-data/rill-data-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.rilldata.com)
+- [Documentation](https://docs.rilldata.com)
+- [Getting started](https://docs.rilldata.com/home/get-started)
+- [API reference](https://docs.rilldata.com/reference/api)
+- [Pricing](https://www.rilldata.com/pricing)
+- [Sign up](https://ui.rilldata.com)
+- [Support](https://discord.gg/2ubRfjC7Rh)
+- [Blog](https://www.rilldata.com/blog)
+- [Compliance](https://trust.rilldata.com/)
+- [Privacy policy](https://www.rilldata.com/privacy-policy)
+- [GitHub](https://github.com/rilldata)
+- [Status](https://status.rilldata.com)
+
+## API Evangelist rating
+
+**Kin Score 46.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 38.9 |
+| Contract governance | 18.2 |
+| Operational transparency | 34.2 |
+| Developer ergonomics | 66.1 |
+| Access clarity | 36.8 |
+
+**Agent readiness 39.8** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | templated |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/rill-data/](https://apis.io/providers/rill-data/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Rill Data: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/rill-data/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
